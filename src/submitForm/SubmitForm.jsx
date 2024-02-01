@@ -1,18 +1,23 @@
 import React from 'react'
-import "./SubmitForm.css"
+import "./submitForm.css";
 
-const SubmitForm = () => {
+const SubmitForm = ({
+    name , setName , number , setMobile , mail , setMail , handleSubmit
+}) => {
+
+    
   return (
     <div className="submit">
-    <span className="submitTitle">Login</span>
+    <span className="submitTitle">React Js Submit Form</span>
     <form className="submitForm">
+    <label>User Name</label>
+      <input className="submitInput" type="text" placeholder="name..." name='name' value={name} onChange={(e) => setName(e.target.value)}/>
+      <label>Mobile</label>
+      <input className="submitInput" type="text" placeholder="Mobile number ..." name='number' value={number} onChange={(e) => setMobile(e.target.value)}/>
       <label>Email</label>
-      <input className="loginInput" type="text" placeholder="Enter your email..." />
-      <label>Password</label>
-      <input className="loginInput" type="password" placeholder="Enter your password..." />
-      <button className="loginButton">Login</button>
+      <input className="submitInput" type="mail" placeholder="email..." name='mail' value={mail} onChange={(e) => setMail(e.target.value)}/>
+      <button className="submitRegisterButton" onClick={handleSubmit}>Register</button>
     </form>
-      <button className="loginRegisterButton"><Link style={{textDecoration: 'none',color:'inherit'}} to="/register">Register</Link></button>
   </div>
   )
 }
