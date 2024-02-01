@@ -15,7 +15,7 @@ if (mysqli_connect_error()) {
     $res = mysqli_query($conn, $sql);
 
     if ($res) {
-        echo "Success hhh";
+         echo "Success hi";
     } else {
         echo "Error: " . mysqli_error($conn); 
     }
